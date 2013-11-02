@@ -1,16 +1,15 @@
-export PATH="/Users/jewlofthelotus/bin:/usr/local:/usr/local/bin:/usr/local/sbin:":$PATH
+export PATH="/Users/jewls/bin:/usr/local:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:":$PATH
 
 export PS1="\n\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$ "
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
 alias ls='ls -GFh'
 
-alias web='cd /Library/WebServer/Documents'
-
-
 if [ -f ~/.git-completion.bash ]; then
   . ~/.git-completion.bash
 fi
+
+alias web='cd /Library/WebServer/Documents'
 
 alias ga='git add'
 alias gb='git branch'
