@@ -5,6 +5,9 @@ export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
 alias ls='ls -GFh'
 
+alias web='cd /Library/WebServer/Documents'
+
+
 if [ -f ~/.git-completion.bash ]; then
   . ~/.git-completion.bash
 fi
