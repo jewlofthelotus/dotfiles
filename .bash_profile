@@ -1,16 +1,16 @@
-source "/opt/boxen/env.sh"
+source ~/.git-prompt.sh
+source ~/.git-completion.bash
 
-export PATH="/Users/jewls/bin:/usr/local:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/opt/boxen/homebrew/bin:":$PATH
-
-export PS1="\n\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$ "
+# https://blog.bigdinosaur.org/easy-ps1-colors/
+export PS1="\n\[\033[33;1m\]\w\[\033[m\]\[\033[0;32m\]\$(__git_ps1)\[\033[m\] \[\033[0;36m\]∆\[\033[m\] "
+export PATH="/Users/jewls/bin:/usr/local:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/heroku/bin":$PATH
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
+
 alias ls='ls -GFh'
 
-if [ -f ~/.git-completion.bash ]; then
-  . ~/.git-completion.bash
-fi
-
+alias src='cd ~/src'
+alias sites='cd ~/Sites'
 alias web='cd /Library/WebServer/Documents'
 
 alias gaa='git add -A'
@@ -21,14 +21,12 @@ alias gr='git remote -v'
 alias gs='git status'
 alias gp='git pull'
 alias gpr='git pull --rebase origin master'
+alias gu='git reset --soft HEAD~'
 
-alias code='cd ~/src'
-
-alias b='bundle install'
-alias d='rake db:migrate && rake db:test:prepare'
-alias i='bundle exec rake environment elasticsearch:import:all FORCE=true'
-alias f='bundle exec foreman start'
-alias r='bundle exec rspec'
-
-# start
-alias s='b && d && f'
+alias de='eval $(docker-machine env default)'
+alias dock='docker-machine restart default; de'
+alias skip='cd ~/src/skipper; de; make start'
+alias dcu='docker-compose up'
+alias dcr='docker-compose run app'
+alias dcl='docker-compose logs'
+alias dock-respec='docker-compose run app rspec spec'
