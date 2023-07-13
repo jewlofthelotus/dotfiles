@@ -1,11 +1,7 @@
-source ~/.git-prompt.sh
-source ~/.git-completion.bash
+# export PATH="/Users/jewls/bin:/usr/local:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/heroku/bin":$PATH
+export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"
 
-# https://blog.bigdinosaur.org/easy-ps1-colors/
-export PS1="\n\[\033[33;1m\]\w\[\033[m\]\[\033[0;32m\]\$(__git_ps1)\[\033[m\] \[\033[0;36m\]∆\[\033[m\] "
-export PATH="/Users/jewls/bin:/usr/local:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/heroku/bin":$PATH
-export CLICOLOR=1
-export LSCOLORS=ExFxBxDxCxegedabagacad
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
 alias ls='ls -GFh'
 
